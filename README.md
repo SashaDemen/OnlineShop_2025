@@ -1,82 +1,97 @@
-##Mini-Rozetka (Django + HTMX) — Luxe Theme
+# 🛍️ Mini-Rozetka (Django + HTMX) — Luxe Theme  
+Маркетплейс з **покупцями та продавцями**, де продавці можуть створювати магазини, публікувати товари, а покупці — переглядати, фільтрувати й купувати їх.  
+Є **кошик і оформлення замовлення**, **відгуки та рейтинги**, а також **темний “люксовий” дизайн** (чорний + зелений + трохи синього).
 
-Marketplace with buyers and sellers, where sellers can create shops, publish products, and buyers can browse, filter, and purchase them. Includes cart & checkout, reviews & ratings, and a dark “luxury” design (black + green + blue).
+Marketplace with **buyers and sellers**, where sellers can create shops, publish products, and buyers can browse, filter, and purchase them.  
+Includes **cart & checkout**, **reviews & ratings**, and a **dark “luxury” design** (black + green + blue).
 
-#Features
+---
 
-Accounts & Roles: buyers register to shop, sellers register to open their shop and manage products.
+## 🚀 Features / Можливості
 
-Shops: seller can customize shop banner, avatar, description, and payment info.
+- **Accounts & Roles / Акаунти та ролі**  
+  Buyers register to shop, sellers register to open and manage their shop.  
+  Покупці реєструються для покупок, продавці — щоб відкрити і керувати магазином.  
 
-Catalog: products grouped by categories, with text search and filters (price, category) for quick discovery.
+- **Shops / Магазини**  
+  Sellers customize banner, avatar, description, payment info.  
+  Продавці налаштовують банер, аватар, опис, платіжну інформацію.  
 
-Cart & Checkout: add items dynamically with HTMX (no full page reload), then place an order.
+- **Catalog / Каталог**  
+  Categories, search, filters (price, category).  
+  Категорії, пошук, фільтри (ціна, категорія).  
 
-Reviews & Ratings: buyers can leave one review per completed order, building seller reputation.
+- **Cart & Checkout / Кошик і замовлення**  
+  Add items dynamically with HTMX, place order.  
+  Додавання товарів без перезавантаження (HTMX), оформлення замовлення.  
 
-Design: Bootstrap 5 + custom theme.css → modern dark UI, premium look and feel.
+- **Reviews & Ratings / Відгуки та рейтинги**  
+  One review per completed order.  
+  Один відгук за виконане замовлення.  
 
-#Quick Start
+- **Design / Дизайн**  
+  Bootstrap 5 + custom `theme.css` → dark, premium UI.  
+  Bootstrap 5 + власна тема `theme.css` → темний, “люксовий” вигляд.  
 
-Steps to get the project running locally:
+---
 
- Install dependencies with Poetry
+## ⚡ Quick Start / Швидкий старт
+
+```bash
+# Install dependencies / Встановлення залежностей
 poetry install
 
- Apply database migrations
+# Apply database migrations / Міграції
 poetry run python manage.py migrate
 
- Create an admin user for /admin/
+# Create superuser for /admin/ / Створення адміністратора
 poetry run python manage.py createsuperuser
 
- Load demo data: categories, 12 fishing products, demo shop
+# Load demo data (categories, 12 products, demo shop) / Завантаження демо-даних
 poetry run python manage.py loaddata catalog/fixtures/initial_data.json
 
- Start development server
+# Run server / Запуск сервера
 poetry run python manage.py runserver
+➡️ Open / Відкрити: http://127.0.0.1:8000
 
+🖼️ Product Images / Зображення товарів
+Demo products include placeholders.
 
-Open: http://127.0.0.1:8000
+У демо-товарів спочатку стоять плейсхолдери.
 
-#Product Images
+Fetch real product photos from Unsplash/Pexels:
+Отримати реальні фото товарів з Unsplash/Pexels:
 
-By default, demo products come with placeholder images so everything works out of the box.
-
-To get real product photos (Unsplash / Pexels, free license):
-
+bash
+Копировать код
 poetry run python manage.py fetch_product_images
+Images saved to media/products/ and linked to products.
 
+Фото збережуться у media/products/ та прив’яжуться до товарів.
 
-This downloads images into media/products/ and links them to the 12 demo products.
+See CREDITS.md for sources & licenses.
+Див. CREDITS.md для джерел і ліцензій.
 
-See CREDITS.md for image sources and licenses.
+🛠️ Stack / Технології
+Backend: Django 5 + HTMX
 
-#Stack
+Filtering/Search: django-filter, django-render-block
 
-Backend: Django 5 with HTMX for interactive UI without heavy JS.
+Frontend: Bootstrap 5 + custom dark theme (static/css/theme.css)
 
-Filtering/Search: django-filter and django-render-block for dynamic catalog updates.
+Dev Tools: Poetry, ruff, isort, black (PEP8)
 
-Frontend: Bootstrap 5 + custom dark theme (static/css/theme.css) with green/blue accents.
+Database: SQLite by default (PostgreSQL ready)
 
-Dev Tools: Poetry for dependency management, ruff/isort/black for PEP8 compliance.
+🔑 Key URLs / Основні адреси
+/ — Catalog / Каталог
 
-Database: SQLite by default (PostgreSQL ready).
+/product/<slug>/ — Product detail / Товар
 
-#Key URLs
+/cart/ — Shopping cart / Кошик
 
-/ — Catalog with filters and search.
+/orders/checkout/ — Checkout / Замовлення
 
-/product/<slug>/ — Product detail page.
+/shops/me/ — Seller’s shop / Мій магазин
 
-/cart/ — Shopping cart (HTMX updates).
-
-/orders/checkout/ — Checkout form.
-
-/shops/me/ — Seller’s own shop (customize profile, view products).
-
-/admin/ — Django admin panel.
-Див. файл **CREDITS.md**. Реальні фото підтягнуться командою:
-```bash
-poetry run python manage.py fetch_product_images
-```
+/admin/ — Django admin
