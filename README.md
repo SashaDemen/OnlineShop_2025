@@ -54,7 +54,7 @@ poetry run python manage.py loaddata catalog/fixtures/initial_data.json
 poetry run python manage.py runserver
 ➡ Open / Відкрити: http://127.0.0.1:8000
 
-🖼 Product Images / Зображення товарів
+ Product Images / Зображення товарів
 Demo products include placeholders.
 
 У демо-товарів спочатку стоять плейсхолдери.
@@ -72,7 +72,7 @@ Images saved to media/products/ and linked to products.
 See CREDITS.md for sources & licenses.
 Див. CREDITS.md для джерел і ліцензій.
 
-🛠 Stack / Технології
+ Stack / Технології
 Backend: Django 5 + HTMX
 
 Filtering/Search: django-filter, django-render-block
