@@ -1,8 +1,0 @@
-{% extends "base.html" %}
-{% block content %}
-<h3>Вхід</h3>
-<form method="post" class="w-25">{% csrf_token %}
-  {{ form.as_p }}
-  <button class="btn btn-primary">Увійти</button>
-</form>
-{% endblock %}
