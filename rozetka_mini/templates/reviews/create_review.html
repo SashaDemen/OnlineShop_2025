@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Відгук для замовлення #{{ order.id }}</h3>
+<form method="post">{% csrf_token %}
+  <div class="mb-2">
+    <label class="form-label">Рейтинг (1..5)</label>
+    <input type="number" min="1" max="5" name="rating" class="form-control" value="5">
+  </div>
+  <div class="mb-2">
+    <label class="form-label">Текст</label>
+    <textarea name="text" class="form-control"></textarea>
+  </div>
+  <button class="btn btn-primary">Залишити відгук</button>
+</form>
+{% endblock %}

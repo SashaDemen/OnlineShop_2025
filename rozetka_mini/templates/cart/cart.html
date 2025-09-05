@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Кошик</h3>
+<table class="table">
+  <thead><tr><th>Товар</th><th>К-сть</th><th>Сума</th><th></th></tr></thead>
+  <tbody>
+  {% for i in items %}
+    <tr>
+      <td>{{ i.product.title }}</td>
+      <td>{{ i.qty }}</td>
+      <td>{{ i.subtotal }}</td>
+      <td><a class="btn btn-sm btn-outline-danger" href="{% url 'remove_from_cart' i.product.id %}">x</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<p><strong>Всього: {{ total }}</strong></p>
+<a class="btn btn-primary" href="/orders/checkout/">Оформити</a>
+{% endblock %}
