@@ -7,7 +7,7 @@ Includes **cart & checkout**, **reviews & ratings**, and a **dark “luxury” d
 
 ---
 
-## 🚀 Features / Можливості
+##  Features / Можливості
 
 - **Accounts & Roles / Акаунти та ролі**  
   Buyers register to shop, sellers register to open and manage their shop.  
@@ -35,7 +35,7 @@ Includes **cart & checkout**, **reviews & ratings**, and a **dark “luxury” d
 
 ---
 
-## ⚡ Quick Start / Швидкий старт
+##  Quick Start / Швидкий старт
 
 ```bash
 # Install dependencies / Встановлення залежностей
@@ -52,9 +52,9 @@ poetry run python manage.py loaddata catalog/fixtures/initial_data.json
 
 # Run server / Запуск сервера
 poetry run python manage.py runserver
-➡️ Open / Відкрити: http://127.0.0.1:8000
+➡ Open / Відкрити: http://127.0.0.1:8000
 
-🖼️ Product Images / Зображення товарів
+🖼 Product Images / Зображення товарів
 Demo products include placeholders.
 
 У демо-товарів спочатку стоять плейсхолдери.
@@ -72,7 +72,7 @@ Images saved to media/products/ and linked to products.
 See CREDITS.md for sources & licenses.
 Див. CREDITS.md для джерел і ліцензій.
 
-🛠️ Stack / Технології
+🛠 Stack / Технології
 Backend: Django 5 + HTMX
 
 Filtering/Search: django-filter, django-render-block
@@ -83,7 +83,7 @@ Dev Tools: Poetry, ruff, isort, black (PEP8)
 
 Database: SQLite by default (PostgreSQL ready)
 
-🔑 Key URLs / Основні адреси
+ Key URLs / Основні адреси
 / — Catalog / Каталог
 
 /product/<slug>/ — Product detail / Товар
