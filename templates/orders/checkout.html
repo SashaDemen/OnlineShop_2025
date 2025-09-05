@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Оформлення замовлення</h3>
+{% if items %}
+<table class="table">
+  <thead><tr><th>Товар</th><th>К-сть</th><th>Сума</th></tr></thead>
+  <tbody>
+  {% for i in items %}
+    <tr><td>{{ i.product.title }}</td><td>{{ i.qty }}</td><td>{{ i.subtotal }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+<p><strong>Всього: {{ total }}</strong></p>
+<form method="post">{% csrf_token %}
+  <button class="btn btn-primary">Підтвердити замовлення</button>
+</form>
+{% else %}
+<p>Кошик порожній.</p>
+{% endif %}
+{% endblock %}

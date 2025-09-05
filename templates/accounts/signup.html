@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Реєстрація</h3>
+<form method="post" class="w-25">{% csrf_token %}
+  {{ form.as_p }}
+  <div class="mb-3">
+    <label class="form-label">Роль</label>
+    <select class="form-select" name="role">
+      <option value="buyer">Покупець</option>
+      <option value="seller">Продавець</option>
+    </select>
+  </div>
+  <button class="btn btn-primary">Створити акаунт</button>
+</form>
+{% endblock %}
